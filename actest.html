@@ -20,12 +20,17 @@ body {
 	<li>rotation alpha: <span id="rotationAlpha"></span></li>
 	<li>rotation beta: <span id="rotationBeta"></span></li>
 	<li>rotation gamma: <span id="rotationGamma"></span></li>
+
+	<li> <span id="DESTRA"></span></li>
+	<li> <span id="SINISTRA"></span></li>
+	<li> <span id="SU"></span></li>
+	<li> <span id="GIU"></span></li>
 </ul>
 
 test: <span id="test"></span>
 </div>
 <script type="text/javascript">
-setInterval( function(){
+
 if (window.DeviceMotionEvent != undefined) {
 	window.ondevicemotion = function(e) {
 		
@@ -35,7 +40,7 @@ if (window.DeviceMotionEvent != undefined) {
 			document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(0);
 		}		
 	}
-}},3000); 
+};
 </script>
 
 </body>
