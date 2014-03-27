@@ -20,15 +20,13 @@ body {
 
 <body>
 <div id="content">
-    <h1>Accelerometer Javascript Test</h1>
+    <h1>AcTest</h1>
     <div id="sphere"></div>
 <ul>
 	<li>acceleration x: <span id="accelerationX"></span>g</li>
 	<li>acceleration y: <span id="accelerationY"></span>g</li>
 	<li>acceleration z: <span id="accelerationZ"></span>g</li>
-	<li>rotation alpha: <span id="rotationAlpha"></span>degree</li>
-	<li>rotation beta: <span id="rotationBeta"></span>degree</li>
-	<li>rotation gamma: <span id="rotationGamma"></span>degree</li>
+	
 </ul>
 
 test: <span id="test"></span>
@@ -49,11 +47,7 @@ if (window.DeviceMotionEvent != undefined) {
 		document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y;
 		document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z;
 
-		if ( e.rotationRate ) {
-			document.getElementById("rotationAlpha").innerHTML = e.rotationRate.alpha;
-			document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta;
-			document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma;
-		}		
+				
 	}
 
 	setInterval( function() {
