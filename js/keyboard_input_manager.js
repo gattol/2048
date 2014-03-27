@@ -133,7 +133,7 @@ KeyboardInputManager.prototype.listen = function () {
       
       if(rx<(-200)){
        // document.getElementById("SINISTRA").innerHTML = "SINISTRA";
-       self.emit("move", 0);
+       self.emit("move", 2);
       }
       if(rx>200){
        // document.getElementById("DESTRA").innerHTML = "DESTRA";
@@ -141,11 +141,11 @@ KeyboardInputManager.prototype.listen = function () {
       }
       if(ry<(-200)){
        // document.getElementById("SU").innerHTML = "SU";
-       self.emit("move", 2);
+       self.emit("move", 0);
       }
       if(ry>200){
        // document.getElementById("GIU").innerHTML = "GIU";
-       self.emit("move", 3);
+       self.emit("move", 2);
       }
     }   
   }
