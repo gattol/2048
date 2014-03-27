@@ -25,7 +25,7 @@ body {
 test: <span id="test"></span>
 </div>
 <script type="text/javascript">
-setInterval(
+setInterval(function(e){
 if (window.DeviceMotionEvent != undefined) {
 	window.ondevicemotion = function(e) {
 		
@@ -35,7 +35,7 @@ if (window.DeviceMotionEvent != undefined) {
 			document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(0);
 		}		
 	}
-},3000); 
+}},3000); 
 </script>
 
 </body>
