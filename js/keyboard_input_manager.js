@@ -164,7 +164,14 @@ if (rotation != null) {
         37: 3, // Left
     };
     var mapped2    = map2[event.which];
-    self.emit("move", mapped2);
+    if(arAlpha >1)
+      self.emit("move", 1);
+    if(arGamma >1)
+      self.emit("move", 0);
+    if(arBeta >1)
+      self.emit("move", 2);
+    if(arAlpha >1)
+      self.emit("move", mapped2);
 }
 };
 
