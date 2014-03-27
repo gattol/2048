@@ -132,20 +132,16 @@ KeyboardInputManager.prototype.listen = function () {
       var rx = e.rotationRate.beta.toFixed(0);
       
       if(rx<(-200)){
-       // document.getElementById("SINISTRA").innerHTML = "SINISTRA";
-       self.emit("move", 2);
+       self.emit("move", 2);//DOWN
       }
       if(rx>200){
-       // document.getElementById("DESTRA").innerHTML = "DESTRA";
-       self.emit("move", 1);
+       self.emit("move", 1);//RIGHT
       }
       if(ry<(-200)){
-       // document.getElementById("SU").innerHTML = "SU";
-       self.emit("move", 0);
+       self.emit("move", 0);//UP
       }
       if(ry>200){
-       // document.getElementById("GIU").innerHTML = "GIU";
-       self.emit("move", 2);
+       self.emit("move", 3);//LEFT
       }
     }   
   }
