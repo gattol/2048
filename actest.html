@@ -14,7 +14,6 @@ body {
 <body>
 <div id="content">
     <h1>AcTest</h1>
-    <div id="sphere"></div>
 <ul>
 	
 	<li>rotation alpha: <span id="rotationAlpha"></span></li>
@@ -35,22 +34,21 @@ if (window.DeviceMotionEvent != undefined) {
 	window.ondevicemotion = function(e) {
 		
 		if ( e.rotationRate ) {
-			var ry= document.getElementById("rotationAlpha").innerHTML = e.rotationRate.alpha.toFixed(0);
-			var rx= document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta.toFixed(0);
-			document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(0);
-			if(rx<(-190)){
+			var ry = e.rotationRate.alpha.toFixed(0);
+			var rx = e.rotationRate.beta.toFixed(0);
+			
+			if(rx<(-200)){
 				document.getElementById("SINISTRA").innerHTML = "SINISTRA";
 			}
-			if(rx>190){
+			if(rx>200){
 				document.getElementById("DESTRA").innerHTML = "DESTRA";
 			}
-			if(ry<(-190)){
+			if(ry<(-200)){
 				document.getElementById("SU").innerHTML = "SU";
 			}
-			if(ry>190){
+			if(ry>200){
 				document.getElementById("GIU").innerHTML = "GIU";
 			}
-
 		}		
 	}
 };
