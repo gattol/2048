@@ -163,7 +163,7 @@ if (rotation != null) {
         40: 2, // Down
         37: 3, // Left
     };
-    var mapped2    = map[event.which];
+    var mapped2    = map2[event.which];
     self.emit("move", mapped2);
 }
 };
