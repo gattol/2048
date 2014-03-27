@@ -38,11 +38,17 @@ if (window.DeviceMotionEvent != undefined) {
 			var ry= document.getElementById("rotationAlpha").innerHTML = e.rotationRate.alpha.toFixed(0);
 			var rx= document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta.toFixed(0);
 			document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(0);
-			if(rx>190){
+			if(rx<(-190)){
 				document.getElementById("SINISTRA").innerHTML = "SINISTRA";
 			}
-			if(rx<(-190)){
+			if(rx>190){
 				document.getElementById("DESTRA").innerHTML = "DESTRA";
+			}
+			if(ry<(-190)){
+				document.getElementById("SU").innerHTML = "SU";
+			}
+			if(ry>190){
+				document.getElementById("GIU").innerHTML = "GIU";
 			}
 
 		}		
