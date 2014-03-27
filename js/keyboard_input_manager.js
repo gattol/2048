@@ -1,3 +1,35 @@
+
+
+window.ondevicemotion = function(event) {
+  ax = event.accelerationIncludingGravity.x
+  ay = event.accelerationIncludingGravity.y
+  az = event.accelerationIncludingGravity.z
+  rotation = event.rotationRate;
+  
+
+if (rotation != null) {
+    arAlpha = Math.round(rotation.alpha);
+    arBeta = Math.round(rotation.beta);
+    arGamma = Math.round(rotation.gamma)
+  
+    var map2 = {
+        38: 0, // Up
+        39: 1, // Right
+        40: 2, // Down
+        37: 3, // Left
+    };
+    var mapped2    = map[event.which];
+    self.emit("move", mapped2);
+}
+}
+
+
+
+
+
+
+////////////////////////////////////////////////////
+
 function KeyboardInputManager() {
   this.events = {};
 
