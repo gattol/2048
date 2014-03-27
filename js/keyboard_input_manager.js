@@ -144,35 +144,29 @@ KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {
 };
 
 
-
-window.ondevicemotion = function(event) {
-  ax = event.accelerationIncludingGravity.x
-  ay = event.accelerationIncludingGravity.y
-  az = event.accelerationIncludingGravity.z
-  rotation = event.rotationRate;
-  
-
-if (rotation != null) {
-    arAlpha = Math.round(rotation.alpha);
-    arBeta = Math.round(rotation.beta);
-    arGamma = Math.round(rotation.gamma);
-  
-    var map2 = {
-        38: 0, // Up
-        39: 1, // Right
-        40: 2, // Down
-        37: 3, // Left
-    };
-    var mapped2    = map2[event.which];
-    if(arAlpha >1)
-      self.emit("move", 1);
-    if(arGamma >1)
-      self.emit("move", 0);
-    if(arBeta >1)
-      self.emit("move", 2);
-    if(arAlpha >1)
-      self.emit("move", mapped2);
-}
+if (window.DeviceMotionEvent != undefined) {
+  window.ondevicemotion = function(e) {
+    
+    if ( e.rotationRate ) {
+      var ry = e.rotationRate.alpha.toFixed(0);
+      var rx = e.rotationRate.beta.toFixed(0);
+      
+      if(rx<(-200)){
+       // document.getElementById("SINISTRA").innerHTML = "SINISTRA";
+       self.emit("move", 0);
+      }
+      if(rx>200){
+       // document.getElementById("DESTRA").innerHTML = "DESTRA";
+       self.emit("move", 1);
+      }
+      if(ry<(-200)){
+       // document.getElementById("SU").innerHTML = "SU";
+       self.emit("move", 2);
+      }
+      if(ry>200){
+       // document.getElementById("GIU").innerHTML = "GIU";
+       self.emit("move", 3);
+      }
+    }   
+  }
 };
-
-
