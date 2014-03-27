@@ -155,7 +155,7 @@ window.ondevicemotion = function(event) {
 if (rotation != null) {
     arAlpha = Math.round(rotation.alpha);
     arBeta = Math.round(rotation.beta);
-    arGamma = Math.round(rotation.gamma)
+    arGamma = Math.round(rotation.gamma);
   
     var map2 = {
         38: 0, // Up
