@@ -25,13 +25,13 @@ body {
 test: <span id="test"></span>
 </div>
 <script type="text/javascript">
-setInterval(function(e){
+setInterval( function(){
 if (window.DeviceMotionEvent != undefined) {
 	window.ondevicemotion = function(e) {
 		
 		if ( e.rotationRate ) {
-			document.getElementById("rotationAlpha").innerHTML = e.rotationRate.alpha.toFixed(0);
-			document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta.toFixed(0);
+			var rx= document.getElementById("rotationAlpha").innerHTML = e.rotationRate.alpha.toFixed(0);
+			var ry= document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta.toFixed(0);
 			document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(0);
 		}		
 	}
