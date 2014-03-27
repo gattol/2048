@@ -132,7 +132,7 @@ KeyboardInputManager.prototype.listen = function () {
       var rx = e.rotationRate.beta.toFixed(0);
       
       if( (rx<(-200)) && (ry<200) && (ry>(-200)) ){
-       self.emit("move", 2);//DOWN
+       self.emit("move", 3);//DOWN
       }
       if( (rx>200) && (ry<200) && (ry>(-200)) ){
        self.emit("move", 1);//RIGHT
@@ -141,7 +141,7 @@ KeyboardInputManager.prototype.listen = function () {
        self.emit("move", 0);//UP
       }
       if( (ry>200)  && (rx<200) && (rx>(-200)) ){
-       self.emit("move", 3);//LEFT
+       self.emit("move", 2);//LEFT
       }
     }   
   }
