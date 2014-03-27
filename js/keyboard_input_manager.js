@@ -124,27 +124,7 @@ KeyboardInputManager.prototype.listen = function () {
       // (right : left) : (down : up)
       self.emit("move", absDx > absDy ? (dx > 0 ? 1 : 3) : (dy > 0 ? 2 : 0));
     }
-  });
-};
-
-KeyboardInputManager.prototype.restart = function (event) {
-  event.preventDefault();
-  this.emit("restart");
-};
-
-KeyboardInputManager.prototype.keepPlaying = function (event) {
-  event.preventDefault();
-  this.emit("keepPlaying");
-};
-
-KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {
-  var button = document.querySelector(selector);
-  button.addEventListener("click", fn.bind(this));
-  button.addEventListener(this.eventTouchend, fn.bind(this));
-};
-
-
-if (window.DeviceMotionEvent != undefined) {
+    if (window.DeviceMotionEvent != undefined) {
   window.ondevicemotion = function(e) {
     
     if ( e.rotationRate ) {
@@ -170,3 +150,23 @@ if (window.DeviceMotionEvent != undefined) {
     }   
   }
 };
+  });
+};
+
+KeyboardInputManager.prototype.restart = function (event) {
+  event.preventDefault();
+  this.emit("restart");
+};
+
+KeyboardInputManager.prototype.keepPlaying = function (event) {
+  event.preventDefault();
+  this.emit("keepPlaying");
+};
+
+KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {
+  var button = document.querySelector(selector);
+  button.addEventListener("click", fn.bind(this));
+  button.addEventListener(this.eventTouchend, fn.bind(this));
+};
+
+
