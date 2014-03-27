@@ -39,6 +39,9 @@ if (window.DeviceMotionEvent != undefined) {
 			var ry= document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta.toFixed(0);
 			document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma.toFixed(0);
 			if(rx>12){
+				document.getElementById("SINISTRA").innerHTML = "SINISTRA";
+			}
+			if(rx<-12){
 				document.getElementById("DESTRA").innerHTML = "DESTRA";
 			}
 
