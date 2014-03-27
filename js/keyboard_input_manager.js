@@ -131,16 +131,16 @@ KeyboardInputManager.prototype.listen = function () {
       var ry = e.rotationRate.alpha.toFixed(0);
       var rx = e.rotationRate.beta.toFixed(0);
       
-      if(rx<(-200)){
+      if((rx<(-200)) && (ry<200) && (ry>(-200) ){
        self.emit("move", 2);//DOWN
       }
-      if(rx>200){
+      if((rx>200) && (ry<200) && (ry>(-200) ){
        self.emit("move", 1);//RIGHT
       }
-      if(ry<(-200)){
+      if( (ry<(-200))  && (rx<200) && (rx>(-200) ){
        self.emit("move", 0);//UP
       }
-      if(ry>200){
+      if( (ry>200)  && (rx<200) && (rx>(-200) ){
        self.emit("move", 3);//LEFT
       }
     }   
